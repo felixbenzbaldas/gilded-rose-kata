@@ -11,3 +11,4 @@ bin/
 .gradle
 /build/
 
+/src/test/java/com/gildedrose/GildedRoseApprovalTest.thirtyDays.received.txt
