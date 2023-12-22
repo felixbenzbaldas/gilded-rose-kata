@@ -1,13 +1,8 @@
 package com.gildedrose;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.UseReporter;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 @UseReporter(DiffReporter.class)
@@ -41,8 +36,7 @@ public class GildedRoseApprovalTest {
             stringBuilder.append("\n");
             app.updateQuality();
         }
-        String output = stringBuilder.toString();
 
-        Approvals.verify(output);
+        Approvals.verify(stringBuilder.toString());
     }
 }
