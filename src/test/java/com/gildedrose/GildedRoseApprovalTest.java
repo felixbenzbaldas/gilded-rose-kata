@@ -7,12 +7,14 @@ import java.io.PrintStream;
 import org.approvaltests.Approvals;
 import org.approvaltests.reporters.DiffReporter;
 import org.approvaltests.reporters.UseReporter;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 @UseReporter(DiffReporter.class)
 public class GildedRoseApprovalTest {
 
-    private void legacyTestCode(String... args) {
+    @Test
+    public void legacyTest_thirtyDays() {
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20),
                 new Item("Aged Brie", 2, 0),
@@ -24,29 +26,22 @@ public class GildedRoseApprovalTest {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
-
         GildedRose app = new GildedRose(items);
 
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 31; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
-            for (int j = 0; j < items.length; j++) {
-                System.out.println(items[j]);
+            stringBuilder.append("-------- day " + i + " --------");
+            stringBuilder.append("\n");
+            stringBuilder.append("name, sellIn, quality");
+            stringBuilder.append("\n");
+            for (Item item : items) {
+                stringBuilder.append(item);
+                stringBuilder.append("\n");
             }
-            System.out.println("");
+            stringBuilder.append("\n");
             app.updateQuality();
         }
-    }
-
-    @Test
-    public void thirtyDays() {
-
-        ByteArrayOutputStream fakeoutput = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(fakeoutput));
-        System.setIn(new ByteArrayInputStream("a\n".getBytes()));
-
-        legacyTestCode();
-        String output = fakeoutput.toString();
+        String output = stringBuilder.toString();
 
         Approvals.verify(output);
     }
