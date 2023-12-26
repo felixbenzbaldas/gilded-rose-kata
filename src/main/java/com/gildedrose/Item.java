@@ -15,6 +15,7 @@ public class Item {
     }
 
     void updateItem() {
+        sellIn--;
         boolean isAgedBrie = name.equals("Aged Brie");
         boolean isBackstagePass = name.equals("Backstage passes to a TAFKAL80ETC concert");
         boolean isSulfuras = name.equals("Sulfuras, Hand of Ragnaros");
@@ -22,7 +23,6 @@ public class Item {
             if (quality < 50) {
                 quality++;
             }
-            sellIn--;
             if (sellIn < 0) {
                 if (quality < 50) {
                     quality++;
@@ -31,29 +31,26 @@ public class Item {
         } else if (isBackstagePass) {
             if (quality < 50) {
                 quality++;
-                if (sellIn < 11) {
+                if (sellIn < 10) {
                     if (quality < 50) {
                         quality++;
                     }
                 }
-                if (sellIn < 6) {
+                if (sellIn < 5) {
                     if (quality < 50) {
                         quality++;
                     }
                 }
             }
-            sellIn--;
             if (sellIn < 0) {
                 quality = 0;
             }
         } else if (isSulfuras) {
             // quality stays the same
-            sellIn--;
         } else {
             if (quality > 0) {
                 quality--;
             }
-            sellIn--;
             if (sellIn < 0) {
                 if (quality > 0) {
                     quality--;
