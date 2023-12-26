@@ -22,7 +22,7 @@ public class Item {
             if (quality < 50) {
                 quality++;
             }
-            sellIn = sellIn - 1;
+            sellIn--;
             if (sellIn < 0) {
                 if (quality < 50) {
                     quality++;
