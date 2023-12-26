@@ -47,7 +47,8 @@ public class Item {
                 quality = 0;
             }
         } else if (isSulfuras) {
-            // do nothing
+            // quality stays the same
+            sellIn--;
         } else {
             if (quality > 0) {
                 quality--;
