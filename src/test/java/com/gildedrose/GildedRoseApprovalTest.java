@@ -33,7 +33,7 @@ public class GildedRoseApprovalTest {
                 stringBuilder.append("\n");
             }
             stringBuilder.append("\n");
-            app.updateQuality();
+            app.nextDay();
         }
 
         Approvals.verify(stringBuilder.toString());

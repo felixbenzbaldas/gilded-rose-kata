@@ -13,7 +13,7 @@ public class GildedRoseTest {
         };
         GildedRose app = new GildedRose(items);
 
-        app.updateQuality();
+        app.nextDay();
 
         assertThat(conjuredItem.quality).isEqualTo(18);
     }
@@ -26,7 +26,7 @@ public class GildedRoseTest {
         };
         GildedRose app = new GildedRose(items);
 
-        app.updateQuality();
+        app.nextDay();
 
         assertThat(conjuredItem.quality).isEqualTo(0);
     }
@@ -39,7 +39,7 @@ public class GildedRoseTest {
         };
         GildedRose app = new GildedRose(items);
 
-        app.updateQuality();
+        app.nextDay();
 
         assertThat(conjuredItem.quality).isEqualTo(6);
     }

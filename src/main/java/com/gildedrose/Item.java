@@ -14,7 +14,7 @@ public class Item {
         this.quality = quality;
     }
 
-    void updateItem() {
+    void nextDay() {
         sellIn--;
         boolean isAgedBrie = name.equals("Aged Brie");
         boolean isBackstagePass = name.equals("Backstage passes to a TAFKAL80ETC concert");
