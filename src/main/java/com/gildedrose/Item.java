@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import java.util.List;
+
 public class Item {
 
     public String name;
@@ -12,6 +14,12 @@ public class Item {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+    }
+
+    static public void nextDay(List<Item> items) {
+        for (Item item : items) {
+            item.nextDay();
+        }
     }
 
     void nextDay() {
