@@ -2,11 +2,9 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.*;
 
-public class GildedRoseTest {
+public class ItemTest {
 
     @Test
     void qualityOfConjuredItemsDecreasesByTwo() {

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 @UseReporter(DiffReporter.class)
-public class GildedRoseApprovalTest {
+public class ItemApprovalTest {
 
     @Test
     public void legacyTest_thirtyDays() {
