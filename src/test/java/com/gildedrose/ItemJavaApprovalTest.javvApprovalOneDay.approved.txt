@@ -1,0 +1,8 @@
+Item[0] = +5 Dexterity Vest, 9, 19
+Item[1] = Aged Brie, 1, 1
+Item[2] = Elixir of the Mongoose, 4, 6
+Item[3] = Sulfuras, Hand of Ragnaros, 0, 80
+Item[4] = Sulfuras, Hand of Ragnaros, -1, 80
+Item[5] = Backstage passes to a TAFKAL80ETC concert, 14, 21
+Item[6] = Backstage passes to a TAFKAL80ETC concert, 9, 50
+Item[7] = Backstage passes to a TAFKAL80ETC concert, 4, 50
